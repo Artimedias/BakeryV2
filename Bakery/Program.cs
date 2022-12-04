@@ -9,7 +9,7 @@ namespace Bakery
 {
   public class BakeryFront
   {
-    public string TakeOrder()
+    public string TakeOrder() 
     {
       /*char[] strArr = new char[str.Length];
       //breaks it into an array of letters
