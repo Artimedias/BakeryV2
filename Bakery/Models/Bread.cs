@@ -6,6 +6,7 @@ namespace BreadCalc
 {
     public class Bread
     {
+        public int HowMany { get; set; }
         public int BreadPrice(int food, int price)
         {      
             while (food > 0)

@@ -25,6 +25,20 @@ namespace Bakery.Tests
       Bread Marge = new Bread();
       Assert.AreEqual(0, Marge.BreadPrice(0, 0));
     }
+        [TestMethod]
+        public void HowManyRealBread()
+    {
+      Bread Marge = new Bread();
+      Marge.HowMany = 3;
+      Assert.AreEqual(3, Marge.HowMany);
+    }
+        [TestMethod]
+            public void HowManyFakeBread()
+    {
+      Bread Marge = new Bread();
+      Marge.HowMany = 0;
+      Assert.AreEqual(0, Marge.HowMany);
+    }
   
       [TestMethod]
     public void DonutUseTheDeal()
@@ -51,5 +65,19 @@ namespace Bakery.Tests
       Assert.AreEqual(0, Homer.PastryPrice(0, 0));
     }
     
+            [TestMethod]
+        public void HowManyRealDonuts()
+    {
+      Pastry Homer = new Pastry();
+      Homer.HowMany = 6;
+      Assert.AreEqual(6, Homer.HowMany);
+    }
+        [TestMethod]
+            public void HowManyFakeDonuts()
+    {
+      Pastry Homer = new Pastry();
+      Homer.HowMany = 0;
+      Assert.AreEqual(0, Homer.HowMany);
+    }
   }
 }
