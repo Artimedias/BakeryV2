@@ -32,5 +32,13 @@ namespace PastryCalc
             }
             return price;
         }
+        public bool DealChecker(int amount)
+        {
+            if(amount % 3 == 2)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

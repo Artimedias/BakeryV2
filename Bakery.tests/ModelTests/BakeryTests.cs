@@ -39,6 +39,20 @@ namespace Bakery.Tests
       Marge.HowMany = 0;
       Assert.AreEqual(0, Marge.HowMany);
     }
+
+                [TestMethod]
+            public void DealAvalYesBread()
+    {
+      Bread Marge = new Bread();
+      Assert.AreEqual(true, Marge.DealChecker(2));
+    }
+
+                [TestMethod]
+            public void DealAvalNoBread()
+    {
+      Bread Marge = new Bread();
+      Assert.AreEqual(false, Marge.DealChecker(3));
+    }
   
       [TestMethod]
     public void DonutUseTheDeal()
@@ -78,6 +92,20 @@ namespace Bakery.Tests
       Pastry Homer = new Pastry();
       Homer.HowMany = 0;
       Assert.AreEqual(0, Homer.HowMany);
+    }
+
+            [TestMethod]
+            public void DealAvalYesPastery()
+    {
+      Pastry Homer = new Pastry();
+      Assert.AreEqual(true, Homer.DealChecker(2));
+    }
+
+                [TestMethod]
+            public void DealAvalNoPastery()
+    {
+      Pastry Homer = new Pastry();
+      Assert.AreEqual(false, Homer.DealChecker(3));
     }
   }
 }

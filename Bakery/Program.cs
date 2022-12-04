@@ -9,40 +9,75 @@ namespace Bakery
 {
   public class BakeryFront
   {
-    public string TakeOrder() 
-    {
-      /*char[] strArr = new char[str.Length];
-      //breaks it into an array of letters
-      for(int i = 0; i < str.Length; i++)
-      {
-        strArr[i] = str[i];
-        Console.WriteLine(str[i]);
-      }
-      //smushes it back into a string
-      Array.Reverse(strArr);
-      var reversedString = new string (strArr);
-      
-      if(reversedString == str)
-      {
-        return true;
-      }*/
-      return "na";
-    }
-
     public static void Main()
     {
-      /*Console.WriteLine("Enter in a palindrome: ");
-      string userInput = Console.ReadLine();
-      //PalindromeChecker pal1 = new PalindromeChecker();
+      Bread newBread = new Bread();
+      Pastry newPastry = new Pastry();
 
-      if (pal1.IsPalindromeString(userInput))
+      Console.WriteLine("Welcome to the Bakery! We have breads and donuts for sale today. Bread is buy 2 get one free at a price of 5 dollars a loaf. Can I interest you in any loaves of bread? Y/N");
+      string userInput = Console.ReadLine();
+
+      if (userInput == "Y" || userInput == "y")
       {
-        Console.WriteLine("WOOOHOOO!!!! " + userInput + " is a palindrome!!!!!!!!!!!!");
+        Console.WriteLine("Fantatstic! How many loaves of bread would you like?");
+        
+
+        newBread.HowMany = int.Parse(Console.ReadLine());
+
+        if(newBread.DealChecker(newBread.HowMany))
+        {
+          Console.WriteLine("You are eligiable for an extra free loaf of bread, would you like it? Y/N");
+            userInput = Console.ReadLine();
+             if (userInput == "Y" || userInput == "y")
+             {
+              Console.WriteLine("Adding it now!");
+               newBread.HowMany =  newBread.HowMany + 1;
+             }
+             else
+             {
+              Console.WriteLine("No? Alright.");
+             }
+        }
       }
       else
       {
-        Console.WriteLine("Read a palindrome dictionary!");
-      }*/
+        Console.WriteLine("No bread today, got it!");
+      }
+
+      Console.WriteLine("Can I interest you in some donuts today perhaps? Theyre buy two get one for one, or 2 dollars individually. Y/N");
+        userInput = Console.ReadLine();
+          if (userInput == "Y" || userInput == "y")
+          {
+            Console.WriteLine("Wonderful! How many donuts would you like?");
+        
+        
+        newPastry.HowMany = int.Parse(Console.ReadLine());
+
+        if(newPastry.DealChecker(newPastry.HowMany))
+        {
+          Console.WriteLine("You are eligiable for an extra donut for only one dollar, would you like it? Y/N");
+            userInput = Console.ReadLine();
+             if (userInput == "Y" || userInput == "y")
+             {
+              Console.WriteLine("Adding it now!");
+               newPastry.HowMany =  newPastry.HowMany + 1;
+             }
+             else
+             {
+              Console.WriteLine("No? Alright.");
+             }
+        }
+          }
+
+        else
+        {
+          Console.WriteLine("No Dounuts then? Got it!");
+        }
+
+      int price = newBread.BreadPrice(newBread.HowMany, 0);
+      price = newPastry.PastryPrice(newPastry.HowMany, price);
+
+      Console.WriteLine($"You purchased {newBread.HowMany} loaves of bread, and {newPastry.HowMany} donuts. Your total is {price} dollars. Thank you for shopping with us today.");
     }
   }
 }
